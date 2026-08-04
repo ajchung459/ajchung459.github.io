@@ -103,19 +103,12 @@ const collections = {
   },
   animation: {
     title: '3D Animation',
-    description: 'Still frames and presentation images from 3D animation work focused on movement, timing, staging, and visual storytelling.',
+    description: 'A 3D safety animation created in 2023, with attention to staging, movement, timing, and clear visual communication.',
     items: [
       {
-        type: 'image',
-        src: 'assets/images/3d_animation_1.png',
-        alt: 'Still frame from a 3D animation project',
-        caption: '3D Animation · 01'
-      },
-      {
-        type: 'image',
-        src: 'assets/images/3d_animation_2.png',
-        alt: 'Second still frame from a 3D animation project',
-        caption: '3D Animation · 02'
+        type: 'video',
+        src: 'assets/images/Safety Anim 2023.mp4',
+        caption: 'Safety Animation · 2023'
       }
     ]
   },
@@ -180,6 +173,11 @@ function renderThumbnails() {
 
   galleryThumbnails.replaceChildren();
 
+  const hasMultipleItems = activeCollection.items.length > 1;
+  galleryThumbnails.hidden = !hasMultipleItems;
+
+  if (!hasMultipleItems) return;
+
   activeCollection.items.forEach((item, index) => {
     const button = document.createElement('button');
     button.type = 'button';
@@ -204,7 +202,7 @@ function renderThumbnails() {
       const image = document.createElement('img');
       image.src = item.src;
       image.alt = '';
-      image.loading = 'lazy';
+      image.decoding = 'async';
       button.append(image);
     }
 
@@ -215,6 +213,17 @@ function renderThumbnails() {
 
     galleryThumbnails.append(button);
   });
+}
+
+
+function updateCollectionControls() {
+  if (!activeCollection) return;
+
+  const hasMultipleItems = activeCollection.items.length > 1;
+
+  if (galleryPrevious) galleryPrevious.hidden = !hasMultipleItems;
+  if (galleryNext) galleryNext.hidden = !hasMultipleItems;
+  galleryDialog?.classList.toggle('single-item', !hasMultipleItems);
 }
 
 function renderActiveItem() {
@@ -248,6 +257,7 @@ function openCollection(collectionId) {
   activeIndex = 0;
   galleryTitle.textContent = collection.title;
   galleryDescription.textContent = collection.description;
+  updateCollectionControls();
   renderActiveItem();
   galleryDialog.showModal();
 }
@@ -255,6 +265,10 @@ function openCollection(collectionId) {
 function closeCollection() {
   resetMainMedia();
   galleryDialog?.close();
+  galleryDialog?.classList.remove('single-item');
+  if (galleryPrevious) galleryPrevious.hidden = false;
+  if (galleryNext) galleryNext.hidden = false;
+  if (galleryThumbnails) galleryThumbnails.hidden = false;
   activeCollection = null;
 }
 

@@ -391,11 +391,17 @@ code { padding:.12em .35em;border-radius:4px;background:rgba(85,115,171,.12);fon
   transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.preview-frame img {
+.preview-frame img,
+.preview-frame video {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.preview-frame video {
+  background: #101421;
 }
 
 .preview-editorial .preview-frame-one {
@@ -414,20 +420,33 @@ code { padding:.12em .35em;border-radius:4px;background:rgba(85,115,171,.12);fon
   transform: rotate(5deg);
 }
 
+.preview-game .preview-frame-one,
+.preview-game .preview-frame-two,
+.preview-game .preview-frame-three {
+  width: 29%;
+  height: 62%;
+  top: 19%;
+}
+
 .preview-game .preview-frame-one {
-  width: 68%;
-  height: 48%;
-  left: 16%;
-  top: 12%;
-  transform: rotate(-3deg);
+  left: 5%;
+  transform: rotate(-4deg);
 }
 
 .preview-game .preview-frame-two {
-  width: 61%;
-  height: 34%;
-  right: 9%;
-  bottom: 12%;
-  transform: rotate(5deg);
+  left: 35.5%;
+  z-index: 2;
+  transform: rotate(0deg);
+}
+
+.preview-game .preview-frame-three {
+  right: 5%;
+  transform: rotate(4deg);
+}
+
+.preview-game .preview-frame img {
+  object-fit: contain;
+  background: white;
 }
 
 .preview-environments .preview-frame-one {
@@ -447,19 +466,15 @@ code { padding:.12em .35em;border-radius:4px;background:rgba(85,115,171,.12);fon
 }
 
 .preview-animation .preview-frame-one {
-  width: 58%;
-  height: 58%;
-  left: 8%;
-  top: 12%;
-  transform: rotate(-4deg);
+  width: 74%;
+  height: 68%;
+  left: 13%;
+  top: 16%;
+  transform: rotate(-2deg);
 }
 
-.preview-animation .preview-frame-two {
-  width: 55%;
-  height: 55%;
-  right: 7%;
-  bottom: 10%;
-  transform: rotate(4deg);
+.preview-animation .preview-frame video {
+  object-fit: contain;
 }
 
 .preview-compositing .preview-frame-one {
@@ -504,8 +519,8 @@ code { padding:.12em .35em;border-radius:4px;background:rgba(85,115,171,.12);fon
 .collection-box button:focus-visible .preview-game .preview-frame-two,
 .collection-box button:hover .preview-environments .preview-frame-two,
 .collection-box button:focus-visible .preview-environments .preview-frame-two,
-.collection-box button:hover .preview-animation .preview-frame-two,
-.collection-box button:focus-visible .preview-animation .preview-frame-two,
+.collection-box button:hover .preview-game .preview-frame-three,
+.collection-box button:focus-visible .preview-game .preview-frame-three,
 .collection-box button:hover .preview-compositing .preview-frame-three,
 .collection-box button:focus-visible .preview-compositing .preview-frame-three {
   transform: translateY(-7px) rotate(3deg);
@@ -847,4 +862,46 @@ code { padding:.12em .35em;border-radius:4px;background:rgba(85,115,171,.12);fon
   text-align: center;
   font-size: .72rem;
   font-weight: 800;
+}
+
+
+/* Character preview: keep all three cards aligned and move them evenly on hover. */
+.collection-box button:hover .preview-game .preview-frame-one,
+.collection-box button:focus-visible .preview-game .preview-frame-one {
+  transform: translateY(-7px) rotate(-4deg);
+}
+
+.collection-box button:hover .preview-game .preview-frame-two,
+.collection-box button:focus-visible .preview-game .preview-frame-two {
+  transform: translateY(-7px) rotate(0deg);
+}
+
+.collection-box button:hover .preview-game .preview-frame-three,
+.collection-box button:focus-visible .preview-game .preview-frame-three {
+  transform: translateY(-7px) rotate(4deg);
+}
+
+/* Use the entire thumbnail area so differently shaped artwork stays visible. */
+.collection-thumbnail img,
+.collection-thumbnail video {
+  object-fit: contain;
+  background: var(--paper-deep);
+}
+
+/* A one-item collection does not need arrows or a thumbnail strip. */
+.collection-arrow[hidden],
+.collection-thumbnails[hidden] {
+  display: none;
+}
+
+.collection-dialog.single-item .collection-stage {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.collection-dialog.single-item .collection-stage-media {
+  grid-column: 1;
+}
+
+.collection-dialog.single-item .collection-stage-details {
+  margin-inline: 0;
 }
