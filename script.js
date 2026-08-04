@@ -77,7 +77,7 @@ const collections = {
       },
       {
         type: 'image',
-        src: 'assets/images/character_animation_still.png',
+        src: 'assets/images/liz_2_gif.avif',
         alt: 'Still image from a character animation',
         caption: 'Character Animation Still'
       }
@@ -95,7 +95,7 @@ const collections = {
       },
       {
         type: 'image',
-        src: 'assets/images/environment_2.png',
+        src: 'assets/images/rhino_robot.avif',
         alt: 'Second 3D environment project',
         caption: '3D Environment · 02'
       }
