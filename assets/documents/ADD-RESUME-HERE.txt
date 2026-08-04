@@ -1,0 +1,2 @@
+Add your current resume here and name it Angela_Chung_Resume.pdf,
+or update the resume links in index.html to match your filename.

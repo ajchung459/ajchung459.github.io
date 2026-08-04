@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Robotics animation</title><desc id="desc">Modeling, animation, direction, and editing</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c8d6eb"/><stop offset="1" stop-color="#f2c4cb"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="930" cy="170" r="190" fill="#445d91" opacity=".38"/>
+  <path d="M0 710 C220 590 340 820 560 690S940 510 1200 690V900H0Z" fill="#fff" opacity=".34"/>
+  <path d="M155 180c75-105 205-79 223 31 109-42 190 66 133 157-62 98-238 93-327 15-67-59-79-133-29-203Z" fill="#fff" opacity=".38"/>
+  <text x="80" y="720" fill="#20243b" font-family="Arial, sans-serif" font-size="52" font-weight="700">Robotics animation</text>
+  <text x="82" y="780" fill="#20243b" opacity=".68" font-family="Arial, sans-serif" font-size="27">Modeling, animation, direction, and editing</text>
+  <text x="82" y="835" fill="#20243b" opacity=".55" font-family="Arial, sans-serif" font-size="22">Replace this file with your original work</text>
+</svg>

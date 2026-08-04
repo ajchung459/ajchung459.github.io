@@ -1,101 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Portfolio of Abigail Chang, a computer science student interested in graphics, robotics, computer vision, and interactive systems."
-  >
-
-  <title>Abigail Chang | Portfolio</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Angela Chung — computer science, graphics, robotics, and visual design portfolio.">
+  <meta name="theme-color" content="#fff9f4">
+  <title>Angela Chung | CS + Visual Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-  <header>
-    <nav>
-      <a class="name" href="/">Abigail Chang</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
+  <header class="site-header" data-header>
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="Angela Chung, home">
+        <span class="wordmark-dot" aria-hidden="true"></span>
+        Angela Chung
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-button>
+        <span class="sr-only">Open navigation</span>
+        <span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links" data-nav-links>
+        <a href="#software">Software</a>
+        <a href="#creative">Creative work</a>
         <a href="#about">About</a>
-        <a href="assets/documents/resume.pdf">Résumé</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-resume" href="#editing-guide" title="Add your résumé PDF before publishing">Résumé</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Computer Science + Visual Design</p>
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Computer Science + Visual Design</p>
+        <h1>I create technology that feels <em>visual, playful,</em> and human.</h1>
+        <p class="hero-summary">
+          I’m Angela, a computer science student and visual designer interested in
+          computer graphics, computer vision, robotics, and interactive systems.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#software">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#about">More about me <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="quick-facts" aria-label="Areas of interest">
+          <li>Graphics</li>
+          <li>Computer Vision</li>
+          <li>Robotics</li>
+          <li>Creative Technology</li>
+        </ul>
+      </div>
 
-      <h1>
-        I build visual, interactive, and technically grounded
-        computing experiences.
-      </h1>
-
-      <p>
-        I am a computer science student interested in computer
-        graphics, computer vision, robotics, and human-computer
-        interaction.
-      </p>
-
-      <a class="button" href="#projects">View my work</a>
-    </section>
-
-    <section id="projects">
-      <h2>Selected Projects</h2>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Sprout Motion Tracking</h3>
-
-          <p>
-            A computer-vision system that allows a soft pneumatic
-            robot to react to human motion and gestures.
-          </p>
-
-          <p class="technologies">
-            Python · OpenCV · MediaPipe · Arduino
-          </p>
-
-          <a href="projects/sprout.html">View project</a>
-        </article>
-
-        <article class="project-card">
-          <h3>Visual-Spatial Reasoning Research</h3>
-
-          <p>
-            Research examining common spatial-reasoning failures
-            in vision-language models.
-          </p>
-
-          <p class="technologies">
-            Python · PyTorch · VLM Evaluation
-          </p>
-
-          <a href="projects/vlm-research.html">View project</a>
-        </article>
+      <div class="hero-visual reveal" aria-label="Portrait area">
+        <div class="petal petal-one" aria-hidden="true"></div>
+        <div class="petal petal-two" aria-hidden="true"></div>
+        <div class="portrait-frame">
+          <img src="assets/images/profile-placeholder.svg" alt="Portrait of Angela Chung" data-replaceable-image>
+        </div>
+        <div class="hero-sticker sticker-code" aria-hidden="true">&lt;/&gt;</div>
+        <div class="hero-sticker sticker-spark" aria-hidden="true">✦</div>
+        <p class="replace-note">Replace with <code>assets/images/profile.jpg</code></p>
       </div>
     </section>
 
-    <section id="about">
-      <h2>About Me</h2>
+    <section class="intro-strip" aria-label="Portfolio introduction">
+      <div class="shell marquee-row">
+        <p>Engineering with imagination</p><span>✿</span>
+        <p>Designing with intention</p><span>✿</span>
+        <p>Learning through making</p>
+      </div>
+    </section>
 
-      <p>
-        I combine computer science with visual design to work on
-        projects involving graphics, robotics, interactive systems,
-        and spatial computing.
-      </p>
+    <section class="section shell" id="software">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow"><span></span> Selected software projects</p>
+          <h2>Technical work with a visual point of view.</h2>
+        </div>
+        <p>
+          Projects spanning vision-language models, human–robot interaction,
+          real-time graphics, systems, and parallel computing.
+        </p>
+      </div>
+
+      <div class="software-grid">
+        <article class="project-card project-featured reveal">
+          <div class="project-art art-sprout" role="img" aria-label="Abstract visualization of motion tracking and a soft robot">
+            <span class="tracking-box box-one"></span>
+            <span class="tracking-box box-two"></span>
+            <span class="soft-robot"></span>
+            <span class="signal-line signal-one"></span>
+            <span class="signal-line signal-two"></span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>Human–Robot Interaction</span><span>2025–2026</span></div>
+            <h3>Sprout Motion Tracking</h3>
+            <p>
+              A real-time computer-vision pipeline that detects movement and body gestures,
+              then sends serial commands to a soft pneumatic robot so it can react to people nearby.
+            </p>
+            <ul class="tag-list" aria-label="Technologies">
+              <li>Python</li><li>OpenCV</li><li>MediaPipe</li><li>Arduino</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://github.com/Frovee/Sprout---Motion-Tracking" target="_blank" rel="noreferrer">View repository <span aria-hidden="true">↗</span></a>
+              <a href="#contact">Ask about the project <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-vlm" role="img" aria-label="Abstract multi-image spatial reasoning diagram">
+            <span class="image-plane plane-one"></span>
+            <span class="image-plane plane-two"></span>
+            <span class="axis axis-x">x</span>
+            <span class="axis axis-y">y</span>
+            <span class="axis axis-z">z</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>Undergraduate Research</span><span>2026</span></div>
+            <h3>Visual-Spatial Reasoning in VLMs</h3>
+            <p>
+              Evaluated vision-language models on multi-image spatial questions, analyzed recurring
+              failure patterns, and engineered prompts for camera motion and positional reasoning.
+            </p>
+            <ul class="tag-list"><li>Python</li><li>Qwen-VL</li><li>LLaVA</li><li>Hugging Face</li></ul>
+            <div class="card-links">
+              <a class="placeholder-link" href="#editing-guide">Add paper or repository <span aria-hidden="true">＋</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-atlantis" role="img" aria-label="Stylized underwater city scene">
+            <span class="bubble bubble-one"></span><span class="bubble bubble-two"></span><span class="bubble bubble-three"></span>
+            <span class="ruin ruin-one"></span><span class="ruin ruin-two"></span>
+            <span class="seaweed weed-one"></span><span class="seaweed weed-two"></span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>Computer Graphics</span><span>2025</span></div>
+            <h3>Atlantis Graphics Town</h3>
+            <p>
+              An interactive underwater world with procedural scenery, animated fish schools,
+              reusable bubble particles, custom geometry, and atmospheric camera effects.
+            </p>
+            <ul class="tag-list"><li>JavaScript</li><li>Three.js</li><li>WebGL</li><li>GLSL</li></ul>
+            <div class="card-links">
+              <a class="placeholder-link" href="#editing-guide">Add live demo <span aria-hidden="true">＋</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-art art-systems" role="img" aria-label="Abstract task scheduling diagram">
+            <span class="thread thread-one"></span><span class="thread thread-two"></span><span class="thread thread-three"></span>
+            <span class="queue-block q-one"></span><span class="queue-block q-two"></span><span class="queue-block q-three"></span><span class="queue-block q-four"></span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>Systems Programming</span><span>2025</span></div>
+            <h3>MiniSpark Parallel Execution Engine</h3>
+            <p>
+              Built a pthread-based task system for parallel RDD materialization, dependency scheduling,
+              transformations, partitioning, joins, and asynchronous performance metrics.
+            </p>
+            <ul class="tag-list"><li>C</li><li>pthreads</li><li>Concurrency</li><li>DAGs</li></ul>
+            <div class="card-links">
+              <a class="placeholder-link" href="#editing-guide">Add repository <span aria-hidden="true">＋</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <details class="more-projects reveal">
+        <summary>More systems work <span aria-hidden="true">＋</span></summary>
+        <div class="compact-projects">
+          <article>
+            <p>C · Operating Systems</p>
+            <h3>Unix Shell with Pipelines</h3>
+            <span>Process creation, path resolution, built-ins, pipes, <code>dup2()</code>, and synchronized child execution.</span>
+          </article>
+          <article>
+            <p>C · xv6</p>
+            <h3>Huge-Page Memory Support</h3>
+            <span>Added separate allocation paths for 4 KB and 4 MB pages, including kernel and user-space memory management.</span>
+          </article>
+          <article>
+            <p>C++ · Database Systems</p>
+            <h3>MiniRel Storage Components</h3>
+            <span>Implemented buffer replacement, page pinning, heap-file creation, record insertion, and slotted-page operations.</span>
+          </article>
+        </div>
+      </details>
+    </section>
+
+    <section class="section creative-section" id="creative">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow"><span></span> Creative practice</p>
+            <h2>Visual experiments, animation, and design.</h2>
+          </div>
+          <p>
+            Replace these sample panels with the original full-resolution works stored on your computer.
+            The uneven gallery keeps the handmade, exploratory feeling of the Wix portfolio.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-item gallery-tall reveal">
+            <button type="button" data-lightbox="assets/images/game-art-placeholder.svg" data-caption="Character design and animation — Minerva Game Studio">
+              <img src="assets/images/game-art-placeholder.svg" alt="Placeholder for game character design and animation">
+              <span class="view-chip">View</span>
+            </button>
+            <figcaption><strong>Character Design + Animation</strong><span>Minerva Game Studio</span></figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal">
+            <button type="button" data-lightbox="assets/images/graphics-placeholder.svg" data-caption="Interactive 3D environments and modeling">
+              <img src="assets/images/graphics-placeholder.svg" alt="Placeholder for 3D environment work">
+              <span class="view-chip">View</span>
+            </button>
+            <figcaption><strong>3D Environments</strong><span>Three.js, Maya, Rhinoceros 3D</span></figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-wide reveal">
+            <button type="button" data-lightbox="assets/images/editorial-placeholder.svg" data-caption="Editorial and infographic design">
+              <img src="assets/images/editorial-placeholder.svg" alt="Placeholder for publication and infographic design">
+              <span class="view-chip">View</span>
+            </button>
+            <figcaption><strong>Editorial + Information Design</strong><span>Layout, hierarchy, and visual storytelling</span></figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal">
+            <button type="button" data-lightbox="assets/images/collage-placeholder.svg" data-caption="Photoshop collage and image compositing">
+              <img src="assets/images/collage-placeholder.svg" alt="Placeholder for Photoshop collage work">
+              <span class="view-chip">View</span>
+            </button>
+            <figcaption><strong>Image Compositing</strong><span>Adobe Photoshop</span></figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-tall reveal">
+            <button type="button" data-lightbox="assets/images/robotics-placeholder.svg" data-caption="Robotics safety animation">
+              <img src="assets/images/robotics-placeholder.svg" alt="Placeholder for robotics animation">
+              <span class="view-chip">View</span>
+            </button>
+            <figcaption><strong>Robotics Safety Animation</strong><span>Direction, modeling, animation, and editing</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell about-section" id="about">
+      <div class="about-card reveal">
+        <div class="about-label">
+          <span class="flower-mark" aria-hidden="true">✿</span>
+          <p>About me</p>
+        </div>
+        <div class="about-copy">
+          <h2>I like working where technical problem-solving meets visual imagination.</h2>
+          <p>
+            My experience spans systems, computer graphics, vision-language research, robotics,
+            and game development. Across those areas, I’m most energized by projects where I can
+            understand a complicated system and make the result more intuitive, expressive, or engaging.
+          </p>
+          <p>
+            I value collaborative teams, thoughtful iteration, and the willingness to learn unfamiliar tools.
+          </p>
+          <a class="text-link" href="#editing-guide" title="Add your résumé PDF before publishing">Add my résumé <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="editing-guide section shell" id="editing-guide">
+      <div class="guide-card reveal">
+        <p class="eyebrow"><span></span> Built to be edited</p>
+        <h2>Adding your own work is mostly file replacement.</h2>
+        <div class="guide-grid">
+          <div><strong>01</strong><h3>Add files</h3><p>Put images and GIFs in <code>assets/images/</code> and PDFs in <code>assets/documents/</code>.</p></div>
+          <div><strong>02</strong><h3>Update a path</h3><p>Replace a placeholder filename in <code>index.html</code> with your new filename.</p></div>
+          <div><strong>03</strong><h3>Push changes</h3><p>Commit and push to GitHub. Pages will republish the site automatically.</p></div>
+        </div>
+        <p class="guide-note">The included <code>README.md</code> contains exact examples for images, GIFs, video, PDFs, project cards, and deployment.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="shell contact-inner reveal">
+        <p class="eyebrow"><span></span> Let’s connect</p>
+        <h2>Have a project, opportunity, or interesting problem in mind?</h2>
+        <p>Replace the links below with your current professional email, LinkedIn, and GitHub profile.</p>
+        <div class="contact-links">
+          <a href="mailto:YOUR_EMAIL@example.com">Email <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="shell">
+      <p>Designed and built by Angela Chung.</p>
+      <p>© <span data-year></span></p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" data-lightbox-dialog>
+    <button class="lightbox-close" type="button" aria-label="Close image" data-lightbox-close>×</button>
+    <img src="" alt="" data-lightbox-image>
+    <p data-lightbox-caption></p>
+  </dialog>
 </body>
 </html>
