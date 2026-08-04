@@ -47,13 +47,13 @@ const collections = {
     items: [
       {
         type: 'image',
-        src: 'assets/images/brochure_1.avif',
+        src: 'assets/images/brochure_1.png',
         alt: 'Brochure design spread one',
         caption: 'Brochure Design · 01'
       },
       {
         type: 'image',
-        src: 'assets/images/brochure_2.avif',
+        src: 'assets/images/brochure_2.png',
         alt: 'Brochure design spread two',
         caption: 'Brochure Design · 02'
       }
@@ -65,7 +65,7 @@ const collections = {
     items: [
       {
         type: 'image',
-        src: 'assets/images/game_character_design.avif',
+        src: 'assets/images/liz_1_gif.avif',
         alt: 'Character design and concept artwork',
         caption: 'Character Design'
       },
@@ -76,9 +76,10 @@ const collections = {
         caption: 'Mummy Walk Cycle'
       },
       {
-        type: 'video',
-        src: 'assets/images/game_animation_2.mp4',
-        caption: 'Character Animation'
+        type: 'image',
+        src: 'assets/images/character_animation_still.png',
+        alt: 'Still image from a character animation',
+        caption: 'Character Animation Still'
       }
     ]
   },
@@ -93,9 +94,28 @@ const collections = {
         caption: 'Rhinoceros 3D Environment'
       },
       {
-        type: 'video',
-        src: 'assets/images/environment_2.mp4',
-        caption: 'Interactive Environment Walkthrough'
+        type: 'image',
+        src: 'assets/images/environment_2.png',
+        alt: 'Second 3D environment project',
+        caption: '3D Environment · 02'
+      }
+    ]
+  },
+  animation: {
+    title: '3D Animation',
+    description: 'Still frames and presentation images from 3D animation work focused on movement, timing, staging, and visual storytelling.',
+    items: [
+      {
+        type: 'image',
+        src: 'assets/images/3d_animation_1.png',
+        alt: 'Still frame from a 3D animation project',
+        caption: '3D Animation · 01'
+      },
+      {
+        type: 'image',
+        src: 'assets/images/3d_animation_2.png',
+        alt: 'Second still frame from a 3D animation project',
+        caption: '3D Animation · 02'
       }
     ]
   },
@@ -117,9 +137,9 @@ const collections = {
       },
       {
         type: 'image',
-        src: 'assets/images/nature_collage_3.avif',
-        alt: 'Nature collage and image compositing study three',
-        caption: 'Nature Collage · 03'
+        src: 'assets/images/ps_hat.avif',
+        alt: 'Photoshop image compositing study',
+        caption: 'Photoshop Compositing Study'
       }
     ]
   }
@@ -262,4 +282,14 @@ document.addEventListener('keydown', (event) => {
   if (!galleryDialog?.open) return;
   if (event.key === 'ArrowLeft') moveCollection(-1);
   if (event.key === 'ArrowRight') moveCollection(1);
+});
+
+
+function markBrokenImage(image) {
+  image.closest('.preview-frame')?.classList.add('image-missing');
+  image.alt = image.alt || 'Image file could not be loaded';
+}
+
+document.querySelectorAll('.collection-preview img').forEach((image) => {
+  image.addEventListener('error', () => markBrokenImage(image));
 });
